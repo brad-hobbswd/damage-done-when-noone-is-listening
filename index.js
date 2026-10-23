@@ -6,6 +6,73 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector("#search-query");
   const year = document.querySelector("#year");
   const resultsPage = document.querySelector("#search-page-results");
+
+  // Build one consistent navigation on every page that loads this script.
+  if (navigation) {
+    const currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const groups = [
+      { label: "Home", href: "index.html", direct: true, files: ["index.html"] },
+      { label: "The Teaching", items: [
+        ["Introduction", "intro-page.html", ["intro-page.html"]],
+        ["Chapter Directory", "chapters.html", ["chapters.html"]],
+        ["Part One", "part-one.html", ["part-one.html", "chapter-1.html", "chapter-2.html", "chapter-3.html"]],
+        ["Part Two", "part-two.html", ["part-two.html", "chapter-4.html", "chapter-5.html", "chapter-6.html"]],
+        ["Part Three", "part-three.html", ["part-three.html", "chapter-7.html", "chapter-8.html", "chapter-9.html"]],
+        ["Conclusion", "conclusion.html", ["conclusion.html"]]
+      ]},
+      { label: "Study & Learn", items: [
+        ["Study Guides", "study-guides.html", ["study-guides.html"]],
+        ["Curriculum", "curriculum.html", ["curriculum.html"]],
+        ["Course Syllabus", "syllabus.html", ["syllabus.html"]],
+        ["Resources", "resources.html", ["resources.html"]]
+      ]},
+      { label: "About", items: [
+        ["About the Author and Book", "about.html", ["about.html"]],
+        ["Contact", "contact.html", ["contact.html"]],
+        ["Copyright", "copyright.html", ["copyright.html"]],
+        ["Terms of Use", "terms.html", ["terms.html"]],
+        ["Privacy Policy", "privacy.html", ["privacy.html"]]
+      ]}
+    ];
+    navigation.innerHTML = groups.map((group, index) => {
+      if (group.direct) {
+        const active = group.files.includes(currentFile);
+        return '<a href="' + group.href + '"' + (active ? ' class="active" aria-current="page"' : '') + '>Home</a>';
+      }
+      const active = group.items.some(item => item[2].includes(currentFile));
+      const id = "nav-dropdown-" + index;
+      const links = group.items.map(item => {
+        const isCurrent = item[2].includes(currentFile);
+        return '<a href="' + item[1] + '"' + (isCurrent ? ' class="active" aria-current="page"' : '') + '>' + item[0] + '</a>';
+      }).join("");
+      return '<div class="nav-dropdown' + (active ? ' has-current' : '') + '">' +
+        '<button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="' + id + '">' +
+        group.label + '<span class="dropdown-caret" aria-hidden="true">⌄</span></button>' +
+        '<div class="nav-dropdown-menu" id="' + id + '">' + links + '</div></div>';
+    }).join("");
+    navigation.querySelectorAll(".nav-dropdown-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const wrapper = button.closest(".nav-dropdown");
+        const willOpen = !wrapper.classList.contains("dropdown-open");
+        navigation.querySelectorAll(".nav-dropdown").forEach(item => {
+          item.classList.remove("dropdown-open");
+          item.querySelector(".nav-dropdown-toggle")?.setAttribute("aria-expanded", "false");
+        });
+        if (willOpen) {
+          wrapper.classList.add("dropdown-open");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+    document.addEventListener("click", event => {
+      if (!navigation.contains(event.target)) {
+        navigation.querySelectorAll(".nav-dropdown").forEach(item => {
+          item.classList.remove("dropdown-open");
+          item.querySelector(".nav-dropdown-toggle")?.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+  }
   if (year) year.textContent = new Date().getFullYear();
 
   if (menuButton && navigation) {
