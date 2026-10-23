@@ -506,3 +506,28 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
     max-width: 100%;
   }
 }
+
+
+/* Written Scripture passages within the teaching */
+.scripture-quote {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--burgundy, #762b3d);
+  background: rgba(118, 43, 61, 0.06);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: inherit;
+}
+.scripture-quote p {
+  margin: 0.35rem 0;
+  line-height: 1.75;
+}
+.scripture-quote p:first-child {
+  color: var(--burgundy, #762b3d);
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .scripture-quote {
+    padding: 0.85rem 1rem;
+    margin: 1rem 0;
+  }
+}
