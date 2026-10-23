@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Remove duplicate Scripture quote blocks that may remain in older published HTML.
+  // The first occurrence is retained so each passage keeps its intended position.
+  document.querySelectorAll("main").forEach(main => {
+    const seenScriptureQuotes = new Set();
+    main.querySelectorAll("blockquote.scripture-quote").forEach(quote => {
+      const normalizedText = quote.textContent.replace(/\s+/g, " ").trim().toLowerCase();
+      if (seenScriptureQuotes.has(normalizedText)) {
+        quote.remove();
+      } else {
+        seenScriptureQuotes.add(normalizedText);
+      }
+    });
+  });
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector("#primary-nav");
   const searchButton = document.querySelector(".search-toggle");
