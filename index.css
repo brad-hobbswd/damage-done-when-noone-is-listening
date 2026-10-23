@@ -422,3 +422,62 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
  .nav-dropdown.dropdown-open>.nav-dropdown-menu{display:flex}
 }
 @media(max-width:520px){.nav-dropdown-toggle{font-size:1rem}}
+
+
+/* Resources page heading alignment and responsive scale */
+.study-resource-page .resource-heading {
+  width: min(100% - 2rem, 1040px);
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+.study-resource-page .resource-heading .eyebrow {
+  text-align: center;
+  margin: 0 auto;
+}
+.study-resource-page .resource-heading .ornament {
+  width: min(390px, 82%);
+  margin: .8rem auto 1.15rem;
+}
+.study-resource-page .resource-heading h1 {
+  max-width: 100%;
+  margin: 0 auto 1rem;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 5.4vw, 4.7rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.study-resource-page .resource-heading .resource-lead {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.65vw, 1.3rem);
+  line-height: 1.65;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .study-resource-page .resource-heading {
+    width: calc(100% - 1.5rem);
+    padding: 1.8rem 0 2.1rem;
+  }
+  .study-resource-page .resource-heading .eyebrow {
+    font-size: .68rem;
+    letter-spacing: .12em;
+  }
+  .study-resource-page .resource-heading .ornament {
+    width: min(300px, 85%);
+    margin: .6rem auto .9rem;
+  }
+  .study-resource-page .resource-heading h1 {
+    font-size: clamp(2.25rem, 9vw, 3.25rem);
+    line-height: 1.04;
+    margin-bottom: .85rem;
+  }
+  .study-resource-page .resource-heading .resource-lead {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
