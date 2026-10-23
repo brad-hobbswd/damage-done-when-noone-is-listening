@@ -356,7 +356,8 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
 .chapter-card:hover,.chapter-card:focus-visible { transform:translateY(-2px); border-color:var(--gold); box-shadow:0 8px 22px rgba(52,39,37,.08); }
 .chapter-card .chapter-label { color:#8b672d; text-transform:uppercase; font-size:.7rem; font-weight:700; letter-spacing:.12em; }
 .chapter-card strong { color:var(--burgundy); font-family:var(--serif); font-size:1.55rem; line-height:1.15; }
-.chapter-card span:last-child { color:var(--muted); font-size:.84rem; line-height:1.55; }
+.chapter-card .chapter-summary { color:var(--muted); font-size:.92rem; line-height:1.6; }
+.chapter-card .text-link { color:var(--burgundy); font-size:.84rem; line-height:1.55; margin-top:.25rem; }
 .chapter-note { max-width:790px; margin:2rem auto 0; padding:1rem 1.2rem; border-left:3px solid var(--gold); background:var(--cream); color:#4b3d36; font-size:.88rem; line-height:1.75; }
 @media(max-width:600px) { .chapters-page{padding-top:2.2rem} .chapter-list{grid-template-columns:1fr} .chapter-card{min-height:0} }
 
