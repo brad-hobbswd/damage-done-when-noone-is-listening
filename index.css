@@ -61,3 +61,17 @@
   .hero h1{line-height:.93}
   .opening-section{margin-top:2.4rem;margin-bottom:2.4rem}
 }
+
+
+/* Center the overall page in a narrower canvas so it no longer feels edge-to-edge. */
+body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgba(52,39,37,.08)}
+.site-header{padding-left:clamp(1.25rem,4vw,3.5rem);padding-right:clamp(1.25rem,4vw,3.5rem)}
+.hero{padding-left:clamp(1.5rem,5vw,4.5rem);padding-right:clamp(1.5rem,5vw,4.5rem)}
+.pillars{padding-left:clamp(1.5rem,5vw,4.5rem);padding-right:clamp(1.5rem,5vw,4.5rem)}
+.scripture-banner{margin-left:clamp(1rem,3vw,2.5rem);margin-right:clamp(1rem,3vw,2.5rem)}
+@media(max-width:520px){
+ body{box-shadow:none}
+ .site-header{padding-left:1rem;padding-right:1rem}
+ .hero{padding-left:1.15rem;padding-right:1.15rem}
+ .pillars{padding-left:1.25rem;padding-right:1.25rem}
+}
