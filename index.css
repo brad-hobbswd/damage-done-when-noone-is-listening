@@ -531,3 +531,76 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
     margin: 1rem 0;
   }
 }
+
+
+/* Chapter study sections: a calm visual transition from teaching to practice */
+.study-resource-page .chapter-reading > h2 {
+  margin: 2.6rem 0 1rem;
+  padding: 1rem 1.15rem .85rem;
+  border-top: 1px solid rgba(118, 43, 61, .22);
+  border-left: 3px solid var(--burgundy, #762b3d);
+  border-radius: 0 .55rem .55rem 0;
+  background: linear-gradient(90deg, rgba(118, 43, 61, .065), rgba(118, 43, 61, 0));
+  color: var(--burgundy, #762b3d);
+  line-height: 1.25;
+  scroll-margin-top: 6rem;
+}
+.study-resource-page .chapter-reading > h2:first-child {
+  margin-top: 1.25rem;
+}
+.study-resource-page .chapter-reading section.personal-application,
+.study-resource-page .chapter-reading section.study-prayer,
+.study-resource-page .chapter-reading section.study-reflection {
+  margin: 1.8rem 0;
+  padding: clamp(1rem, 2.8vw, 1.5rem);
+  border: 1px solid rgba(118, 43, 61, .16);
+  border-radius: .85rem;
+  background: rgba(255, 255, 255, .62);
+  box-shadow: 0 5px 18px rgba(42, 24, 24, .035);
+}
+.study-resource-page .chapter-reading section.personal-application {
+  border-top: 3px solid #a98445;
+}
+.study-resource-page .chapter-reading section.study-prayer {
+  border-top: 3px solid var(--burgundy, #762b3d);
+  background: rgba(118, 43, 61, .045);
+}
+.study-resource-page .chapter-reading section.study-reflection {
+  border-top: 3px solid #71816c;
+  background: rgba(113, 129, 108, .065);
+}
+.study-resource-page .chapter-reading section.personal-application h2,
+.study-resource-page .chapter-reading section.study-prayer h2,
+.study-resource-page .chapter-reading section.study-reflection h2 {
+  margin: 0 0 .9rem;
+  padding: 0 0 .75rem;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 1px solid rgba(118, 43, 61, .17);
+  border-radius: 0;
+  background: transparent;
+}
+.study-resource-page .chapter-reading section > :last-child {
+  margin-bottom: 0;
+}
+.study-resource-page .chapter-reading section.study-reflection ol {
+  padding-left: 1.35rem;
+}
+.study-resource-page .chapter-reading section.study-reflection li {
+  padding-left: .25rem;
+  margin: .65rem 0;
+  line-height: 1.7;
+}
+@media (max-width: 640px) {
+  .study-resource-page .chapter-reading > h2 {
+    margin-top: 2rem;
+    padding: .85rem .9rem .75rem;
+  }
+  .study-resource-page .chapter-reading section.personal-application,
+  .study-resource-page .chapter-reading section.study-prayer,
+  .study-resource-page .chapter-reading section.study-reflection {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    border-radius: .7rem;
+  }
+}
