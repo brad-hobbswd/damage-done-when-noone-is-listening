@@ -316,3 +316,16 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
 .part-content .part-emphasis { margin: 1.8rem 0; padding: 1rem 1.25rem; border-left: 3px solid var(--gold); background: #f4eadb; color: var(--burgundy); font-size: clamp(1.25rem,2vw,1.5rem); font-weight: 600; }
 .part-navigation { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; max-width: 790px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--line); }
 @media(max-width:520px) { .part-article { padding-top: 2.2rem; } .part-content p { line-height: 1.78; } .part-navigation { flex-direction: column; align-items: stretch; } }
+
+
+/* Part Two reading page */
+.part-two-article { max-width:1080px; margin:0 auto; padding:clamp(2.5rem,6vw,5.5rem) clamp(1.1rem,4vw,2.5rem) 4rem; }
+.part-two-heading { text-align:center; max-width:900px; margin:0 auto 3rem; padding-bottom:2rem; border-bottom:1px solid var(--line); }
+.part-two-heading h1 { color:var(--burgundy); font-family:var(--serif); font-weight:600; font-size:clamp(2.6rem,6vw,4.8rem); line-height:1.04; margin:.5rem 0 1rem; text-wrap:balance; }
+.part-two-lead { max-width:740px; margin:1rem auto 0; color:var(--muted); font-family:var(--serif); font-size:clamp(1.2rem,2vw,1.5rem); line-height:1.55; font-style:italic; }
+.part-two-content { max-width:790px; margin:0 auto; }
+.part-two-content section + section { margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--line); }
+.part-two-content h2 { color:var(--burgundy); font-family:var(--serif); font-size:clamp(2rem,4vw,3rem); line-height:1.12; margin:0 0 1.35rem; font-weight:600; text-wrap:balance; }
+.part-two-content p { color:#3f3531; font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.32rem); line-height:1.9; margin:0 0 1.3rem; }
+.part-two-navigation { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; max-width:790px; margin:3rem auto 0; padding-top:2rem; border-top:1px solid var(--line); }
+@media(max-width:520px) { .part-two-article{padding-top:2.2rem} .part-two-content p{line-height:1.78} .part-two-navigation{flex-direction:column;align-items:stretch} }
