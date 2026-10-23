@@ -98,70 +98,80 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
 }
 
 
-/* Scripture banner refinement: give the artwork room and keep each element in its own column. */
+/* Scripture banner: slim, balanced layout matching the reference design. */
 .scripture-banner{
   position:relative;
   isolation:isolate;
   display:grid;
-  grid-template-columns:minmax(150px,1fr) minmax(0,2.2fr) minmax(170px,auto);
+  grid-template-columns:minmax(220px,1fr) minmax(0,2.2fr) minmax(175px,auto);
   align-items:center;
-  gap:1.25rem;
-  min-height:118px;
-  margin:1.35rem clamp(1rem,3vw,2.5rem);
-  padding:1.25rem clamp(1rem,2.4vw,2.25rem);
+  gap:1rem;
+  min-height:110px;
+  margin:1.25rem clamp(1rem,3vw,2.5rem);
+  padding:1rem clamp(1rem,2.2vw,2rem);
   overflow:hidden;
   border:1px solid var(--gold);
   border-radius:8px;
   background-color:#fffaf0;
-  background-image:linear-gradient(90deg,rgba(255,250,240,.72),rgba(255,250,240,.36) 28%,rgba(255,250,240,.60) 72%,rgba(255,250,240,.72)),url("sunlightBanner.png");
+  background-image:linear-gradient(90deg,rgba(255,250,240,.84),rgba(255,250,240,.5) 32%,rgba(255,250,240,.55) 68%,rgba(255,250,240,.84)),url("sunlightBanner.png");
   background-position:center;
   background-repeat:no-repeat;
   background-size:cover;
 }
 .scripture-banner>*{position:relative;z-index:1;min-width:0}
 .banner-reference{
+  margin:0;
   white-space:normal;
   text-align:center;
-  line-height:1.5;
-  font-size:clamp(.62rem,.75vw,.76rem);
-  letter-spacing:.07em;
+  line-height:1.55;
+  font-size:clamp(.65rem,.8vw,.78rem);
+  letter-spacing:.055em;
 }
-.banner-reference span{padding:0 .15rem}
+.banner-reference span{padding:0 .2rem}
 .banner-message{
-  padding:0;
-  gap:.55rem;
   min-width:0;
+  padding:0;
+  gap:.5rem;
+  text-align:center;
 }
 .banner-message p{
   margin:0;
-  max-width:100%;
-  font-size:clamp(1.15rem,1.8vw,1.7rem);
-  line-height:1.18;
+  font-size:clamp(1.2rem,1.75vw,1.7rem);
+  line-height:1.15;
+  font-weight:600;
   text-wrap:balance;
 }
+.banner-message span{flex:0 0 auto}
 .scripture-banner>.button{
   justify-self:end;
   width:auto;
   min-width:0;
+  min-height:48px;
+  padding:.7rem 1rem;
   white-space:nowrap;
-  padding:.8rem 1rem;
   font-size:.7rem;
+}
+@media(max-width:1000px){
+  .scripture-banner{grid-template-columns:minmax(155px,1fr) minmax(0,1.8fr) minmax(145px,auto);gap:.6rem;padding:.9rem}
+  .banner-reference{font-size:.62rem}
+  .banner-message p{font-size:clamp(1.05rem,2vw,1.35rem)}
+  .scripture-banner>.button{padding:.65rem .75rem;font-size:.65rem}
 }
 @media(max-width:820px){
   .scripture-banner{
     grid-template-columns:1fr;
-    gap:.6rem;
-    padding:1.2rem 1rem;
-    background-image:linear-gradient(rgba(255,250,240,.72),rgba(255,250,240,.72)),url("sunlightBanner.png");
-    background-position:center;
+    gap:.65rem;
+    min-height:0;
+    padding:1.1rem 1rem;
+    background-image:linear-gradient(rgba(255,250,240,.76),rgba(255,250,240,.76)),url("sunlightBanner.png");
   }
-  .banner-reference{order:1}
+  .banner-reference{order:1;font-size:.68rem}
   .banner-message{order:2}
+  .banner-message p{font-size:1.35rem}
   .scripture-banner>.button{order:3;justify-self:center}
 }
 @media(max-width:520px){
   .scripture-banner{margin:1rem .75rem;padding:1rem .75rem}
-  .banner-reference{font-size:.62rem}
-  .banner-message p{font-size:1.25rem}
+  .banner-message p{font-size:1.2rem}
   .scripture-banner>.button{width:100%;white-space:normal}
 }
