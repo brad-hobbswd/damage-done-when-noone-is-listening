@@ -376,3 +376,25 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
 
 /* About the author and book inspiration */
 .about-book-layout{display:grid;grid-template-columns:minmax(220px, .75fr) minmax(0,1.5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start;max-width:980px;margin:0 auto 3rem}.about-book-cover{background:#f4eadb;border:1px solid var(--line);padding:1rem;border-radius:8px;box-shadow:0 8px 24px rgba(75,11,24,.08)}.about-book-cover img{display:block;width:100%;height:auto;object-fit:contain}.about-book-copy h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.35rem);color:var(--burgundy);line-height:1.2;margin:0 0 .8rem}.about-book-copy p{font-family:var(--serif);font-size:1.15rem;line-height:1.85;color:#3f3531;margin:0 0 1.2rem}.part-introduction{max-width:850px;margin:0 auto 2.75rem;padding:clamp(1.25rem,3vw,2rem);background:#fffdf8;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px}.part-introduction h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--burgundy);line-height:1.2;margin:0 0 1rem}.part-introduction p{font-family:var(--serif);font-size:clamp(1.08rem,1.5vw,1.22rem);line-height:1.85;color:#3f3531;margin:0 0 1rem}.part-introduction p:last-child{margin-bottom:0}@media(max-width:700px){.about-book-layout{grid-template-columns:minmax(0,1fr);max-width:620px}.about-book-cover{max-width:320px;margin:0 auto}.about-book-copy p{font-size:1.08rem;line-height:1.8}}
+
+/* Keep the final conclusion link intentional and aligned on chapter pages */
+.part-navigation > a:last-child {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.part-navigation > a:last-child.button {
+  margin: .25rem auto 0;
+  min-width: 220px;
+}
+@media (max-width: 520px) {
+  .part-navigation > a:last-child,
+  .part-navigation > a:last-child.button {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+  }
+}
+
