@@ -342,3 +342,20 @@ body{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 0 36px rgb
 .part-three-content p { color:#3f3531; font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.32rem); line-height:1.9; margin:0 0 1.3rem; }
 .part-three-navigation { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; max-width:790px; margin:3rem auto 0; padding-top:2rem; border-top:1px solid var(--line); }
 @media(max-width:520px) { .part-three-article{padding-top:2.2rem} .part-three-content p{line-height:1.78} .part-three-navigation{flex-direction:column;align-items:stretch} }
+
+
+/* Chapters directory */
+.chapters-page { max-width:1180px; margin:0 auto; padding:clamp(2.5rem,6vw,5rem) clamp(1rem,4vw,2.5rem) 4rem; }
+.chapters-heading { max-width:850px; margin:0 auto 2.5rem; text-align:center; }
+.chapters-heading h1 { margin:.45rem 0 .9rem; color:var(--burgundy); font-family:var(--serif); font-size:clamp(2.8rem,6vw,5rem); line-height:1; font-weight:600; text-wrap:balance; }
+.chapters-intro { max-width:720px; margin:0 auto; color:var(--muted); font-family:var(--serif); font-size:clamp(1.15rem,2vw,1.4rem); line-height:1.65; }
+.chapter-group { margin:2rem 0 0; padding:clamp(1.2rem,3vw,2rem); border:1px solid var(--line); border-radius:8px; background:#fffdf8; }
+.chapter-group h2 { margin:0 0 1rem; color:var(--burgundy); font-family:var(--serif); font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.2; }
+.chapter-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.chapter-card { display:flex; flex-direction:column; align-items:flex-start; gap:.45rem; min-height:150px; padding:1.2rem; border:1px solid #e7d9bf; border-radius:6px; background:var(--ivory); text-decoration:none; transition:transform .18s,border-color .18s,box-shadow .18s; }
+.chapter-card:hover,.chapter-card:focus-visible { transform:translateY(-2px); border-color:var(--gold); box-shadow:0 8px 22px rgba(52,39,37,.08); }
+.chapter-card .chapter-label { color:#8b672d; text-transform:uppercase; font-size:.7rem; font-weight:700; letter-spacing:.12em; }
+.chapter-card strong { color:var(--burgundy); font-family:var(--serif); font-size:1.55rem; line-height:1.15; }
+.chapter-card span:last-child { color:var(--muted); font-size:.84rem; line-height:1.55; }
+.chapter-note { max-width:790px; margin:2rem auto 0; padding:1rem 1.2rem; border-left:3px solid var(--gold); background:var(--cream); color:#4b3d36; font-size:.88rem; line-height:1.75; }
+@media(max-width:600px) { .chapters-page{padding-top:2.2rem} .chapter-list{grid-template-columns:1fr} .chapter-card{min-height:0} }
